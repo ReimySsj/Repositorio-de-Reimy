@@ -1,0 +1,39 @@
+using System;
+
+class Resolver 
+{
+    static void Main()
+    {
+        Console.WriteLine("Resolución de ecuación cuadrática: ax^2 + bx + c = 0");
+
+        // Solicitar los coeficientes
+        Console.Write("Introduce el valor de a: ");
+        double a = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Introduce el valor de b: ");
+        double b = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Introduce el valor de c: ");
+        double c = Convert.ToDouble(Console.ReadLine());
+
+        // Calcular el discriminante
+        double discriminante = b * b - 4 * a * c;
+
+        // Verificar las soluciones
+        if (discriminante > 0)
+        {
+            double x1 = (-b + Math.Sqrt(discriminante)) / (2 * a);
+            double x2 = (-b - Math.Sqrt(discriminante)) / (2 * a);
+            Console.WriteLine($"Dos soluciones reales: x1 = {x1}, x2 = {x2}");
+        }
+        else if (discriminante == 0)
+        {
+            double x = -b / (2 * a);
+            Console.WriteLine($"Una solución real doble: x = {x}");
+        }
+        else
+        {
+            Console.WriteLine("No hay soluciones reales.");
+        }
+    }
+}
