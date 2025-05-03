@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int a = 0, b = 1, fib = 0;
+
+        Console.WriteLine("Serie Fibonacci del 1 al 50:");
+
+        while (fib <= 50)
+        {
+            if (fib >= 1)
+                Console.Write(fib + " ");
+
+            fib = a + b;
+            a = b;
+            b = fib;
+        }
+
+        Console.WriteLine(); // Salto de línea final
+    }
+}
