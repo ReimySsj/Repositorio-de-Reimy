@@ -1,0 +1,33 @@
+using System;
+
+class Programa
+{
+    static void Main()
+    {
+        int[] numeros = new int[10];
+
+        Console.WriteLine("Ingrese 10 números desordenados:");
+
+        // Leer los 10 números
+        for (int i = 0; i < numeros.Length; i++)
+        {
+            Console.Write($"Número {i + 1}: ");
+            while (!int.TryParse(Console.ReadLine(), out numeros[i]))
+            {
+                Console.Write("Entrada inválida. Ingrese un número entero: ");
+            }
+        }
+
+        // Ordenar el arreglo
+        Array.Sort(numeros);
+
+        // Mostrar los números ordenados
+        Console.WriteLine("\nNúmeros ordenados de menor a mayor:");
+        foreach (int numero in numeros)
+        {
+            Console.Write(numero + " ");
+        }
+
+        Console.WriteLine(); // Línea en blanco final
+    }
+}
